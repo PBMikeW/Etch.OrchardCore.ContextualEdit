@@ -3,11 +3,9 @@ using Etch.OrchardCore.ContextualEdit.Services;
 using Etch.OrchardCore.ContextualEdit.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-using OrchardCore.ContentManagement;
 using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.ContentManagement.Display.Models;
 using OrchardCore.DisplayManagement.Views;
-using OrchardCore.Settings;
 using System.Threading.Tasks;
 using Contents = OrchardCore.Contents;
 
