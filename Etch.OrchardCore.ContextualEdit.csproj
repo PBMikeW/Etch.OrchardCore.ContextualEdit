@@ -1,7 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <PbTargetFramework Condition="'$(PbTargetFramework)' == ''">net8.0</PbTargetFramework>
+    <OrchardCoreVersion Condition="'$(OrchardCoreVersion)' == ''">2.2.1</OrchardCoreVersion>
+    <TargetFramework>$(PbTargetFramework)</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>$(VersionNumber)</Version>
@@ -21,12 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.ContentManagement" Version="2.2.1" />
-    <PackageReference Include="OrchardCore.ContentManagement.Display" Version="2.2.1" />
-    <PackageReference Include="OrchardCore.Contents" Version="2.2.1" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="2.2.1" />
-    <PackageReference Include="OrchardCore.ResourceManagement" Version="2.2.1" />
-    <PackageReference Include="OrchardCore.Module.Targets" Version="2.2.1" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.ContentManagement.Display" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.Contents" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="$(OrchardCoreVersion)" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="$(OrchardCoreVersion)" />
   </ItemGroup>
 
   <ItemGroup>
