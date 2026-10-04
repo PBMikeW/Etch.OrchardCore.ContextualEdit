@@ -45,7 +45,11 @@ namespace Etch.OrchardCore.ContextualEdit.Drivers
 
             var contentItem = await _contextualEditService.GetContentItemForRequestAsync();
 
+#if NET10_0_OR_GREATER
+            if (contentItem == null || !await _authorizationService.AuthorizeAsync(user, Contents.CommonPermissions.EditContent, contentItem))
+#else
             if (contentItem == null || !await _authorizationService.AuthorizeAsync(user, Contents.Permissions.EditContent, contentItem))
+#endif
             {
                 return null;
             }
